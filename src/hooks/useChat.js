@@ -329,7 +329,14 @@ export function useChat(currentUser, selectedUserId) {
           recipientId: effectiveSelectedUserId,
           content: text,
         })
-        broadcastTyping(false)
+        
+        try {
+          broadcastTyping(false)
+        } catch (e) {
+          console.warn('Silent broadcast error:', e)
+        }
+      } catch (err) {
+        console.error('Failed to send message:', err)
       } finally {
         setSending(false)
       }
@@ -350,6 +357,8 @@ export function useChat(currentUser, selectedUserId) {
           imageUrl,
           content: '',
         })
+      } catch (err) {
+        console.error('Failed to send image:', err)
       } finally {
         setSending(false)
       }
