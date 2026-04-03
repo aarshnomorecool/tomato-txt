@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Cabin:wght@400;600;700&family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;700&family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:wght@600;700&family=Libre+Baskerville:wght@700&family=Lora:wght@400;600;700&family=Manrope:wght@400;600;700&family=Merriweather:wght@700&family=Montserrat:wght@500;700&family=Noto+Sans:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&family=Oswald:wght@500;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@500;700&family=PT+Sans:wght@400;700&family=Rubik:wght@500;700&family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --app-bg: #141413;
+  --text-primary: #faf9f5;
+  --text-muted: #d6d2ca;
+  --panel-bg: #252422;
+  --panel-soft: #1d1c1a;
+  --border-color: #3a3935;
+  --accent: #d97757;
+  --accent-strong: #c56545;
+  --accent-text: #ffffff;
+  --bubble-mine: #d97757;
+  --bubble-mine-text: #ffffff;
+  --bubble-other: #b0aea5;
+  --bubble-other-text: #151412;
+  --input-bg: #2d2c2a;
+  --glow-a: rgba(217, 119, 87, 0.22);
+  --glow-b: rgba(106, 155, 204, 0.2);
+  --glow-c: rgba(120, 140, 93, 0.18);
+  --font-heading: Poppins, Arial, sans-serif;
+  --font-body: Lora, Georgia, serif;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply m-0 min-h-screen antialiased transition-colors duration-300;
+  background-color: var(--app-bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  background-image:
+    radial-gradient(circle at 12% 18%, var(--glow-a), transparent 28%),
+    radial-gradient(circle at 88% 16%, var(--glow-b), transparent 26%),
+    radial-gradient(circle at 90% 82%, var(--glow-c), transparent 26%);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: var(--font-heading) !important;
+  letter-spacing: 0.01em;
+}
+
+.theme-text {
+  color: var(--text-primary) !important;
+}
+
+.theme-muted {
+  color: var(--text-muted) !important;
+}
+
+.theme-card {
+  background-color: var(--panel-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-soft {
+  background-color: var(--panel-soft) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-input {
+  background-color: var(--input-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-chip {
+  background-color: var(--panel-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-accent {
+  background-color: var(--accent) !important;
+  color: var(--accent-text) !important;
+}
+
+.theme-accent:hover {
+  background-color: var(--accent-strong) !important;
+}
+
+.theme-bubble-mine {
+  background-color: var(--bubble-mine) !important;
+  color: var(--bubble-mine-text) !important;
+}
+
+.theme-bubble-other {
+  background-color: var(--bubble-other) !important;
+  color: var(--bubble-other-text) !important;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.9) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.9);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
